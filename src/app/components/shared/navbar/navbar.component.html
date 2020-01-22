@@ -1,1 +1,63 @@
-<p>navbar works!</p>
+<div class="side-nav d-block d-md-none" [ngClass]="{'show': show}">
+    <div class="close-btn-container">
+        <button class="close-btn" type="button" (click)="showSideNav()"><i class="fas fa-times"></i></button>
+    </div> <!-- CLOSE BTN CONTAINER -->
+
+    <div class="container">
+        <div class="nav-menu text-uppercase">
+            <a (click)="showSideNav()" [routerLink]="'inicio'" routerLinkActive="active" class="nav-item nav-link" >Inicio</a>
+            <a (click)="showSideNav()" [routerLink]="'nosotros'" routerLinkActive="active" class="nav-item nav-link" >Quienes somos</a>
+            <a class="nav-link nav-item dropdown dropdown-toggle" id="navbarDropdown" role="button" (click)="showDropdownMenu()">
+                Productos
+            </a>
+            <div class="dropdown-menu2" aria-labelledby="navbarDropdown" [ngClass]="{'dropdown-menu-show': dropdownMenu}">
+                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/palos'">Palos</a>
+                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/pelotas'">Pelotas</a>
+                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/bolsos'">Bolsos</a>
+                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/carros'">Carros</a>
+                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/ropa-accesorios'">Ropa y accesorios</a>
+            </div> <!-- DROPDOWN-MENU2 -->
+            <a (click)="showSideNav()" [routerLink]="'contacto'" routerLinkActive="active" class="nav-item nav-link" >Contacto</a>
+        </div> <!-- NAV-MENU -->
+
+        <div class="nav-footer">
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+        </div> <!-- NAV-FOOTER -->
+
+    </div> <!-- CONTAINER -->
+</div> <!-- SIDE-NAV -->
+
+
+<nav class="navbar navbar-expand-lg" [ngClass]="{'nav-responsive-scroll': scrollResponsive }">
+
+    <div class="nav-responsive d-flex d-md-none justify-content-center w-100">
+        <button class="navbar-toggler" type="button" (click)="showSideNav()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <a [routerLink]="['inicio']" class="navbar-brande"><img src="../../../../assets/img/logo responsive white.png" alt="logo"></a>
+    </div> <!-- NAV RESPONSIVE -->
+
+    <div class="container d-none d-md-flex">
+        <a [routerLink]="['inicio']" class="navbar-brand"><img src="../../../../assets/img/Logo.jpg" id="logo" alt="logo" class="img-fluid-height"></a>
+
+        <div class="navbar-nav">
+            <a [routerLink]="'inicio'" class="nav-item nav-link" routerLinkActive="active">Inicio</a>
+            <a [routerLink]="'nosotros'" class="nav-item nav-link" routerLinkActive="active">Quienes Somos</a>
+            <div class="nav-item dropdown">
+                <a [routerLink]="'productos'" class="nav-link dropdown-toggle" routerLinkActive="active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="'productos/palos'">Palos</a>
+                    <a class="dropdown-item" [routerLink]="'productos/pelotas'">Pelotas</a>
+                    <a class="dropdown-item" [routerLink]="'productos/bolsos'">Bolsos</a>
+                    <a class="dropdown-item" [routerLink]="'productos/carros'">Carros</a>
+                    <a class="dropdown-item" [routerLink]="'productos/ropa-accesorios'">Ropa y accesorios</a>
+                </div>
+            </div> <!-- DROPDOWN -->
+            <a [routerLink]="'contacto'" class="nav-item nav-link" routerLinkActive="active">Contacto</a>
+        </div> <!-- NAVBAR-NAV -->
+    </div> <!-- CONTAINER -->
+</nav> <!-- NAVBAR -->
+
+

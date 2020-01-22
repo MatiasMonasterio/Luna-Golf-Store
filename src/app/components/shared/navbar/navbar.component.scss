@@ -1,0 +1,120 @@
+@import '../../../../styles.scss';
+
+.side-nav{
+    position: fixed;
+    left: -80%;
+    background-color: #212121;
+    color: $fuente-sideNav;
+    height: 100%;
+    width: 80%;
+    z-index: 100;
+    transition: left .25s ease-in-out;
+
+    .close-btn-container{
+        border-bottom: 1px solid #F8F8F8;
+        .close-btn{
+            background-color: transparent;
+            border: none;
+            position: relative;
+            left: 86%;
+            margin: 11px;
+            i{
+                color: $fuente-sideNav;
+            }
+        }
+    }
+
+    .nav-item{
+        color: inherit;
+    }
+
+    .dropdown-menu2{
+        margin-left: 30%;
+        height: 0;
+        text-transform: capitalize;
+        overflow: hidden;
+        transition: height .3s ease;
+        -webkit-transition: height .3s ease;
+
+        .dropdown-item{
+            color: inherit;
+            display: inline-block;
+        }
+    }
+
+    .dropdown-menu-show{
+        height: 10em;
+    }
+
+    .nav-footer{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        i{
+            margin-left: 5px;
+            color: $fuente-sideNav;
+        }
+    }
+}
+.show{
+    left: 0;
+}
+
+
+
+.navbar{
+    padding: 0;
+    background-color: #ffff;
+    position: fixed;
+    width: 100%;
+    .container{
+        display: unset;
+    }
+    img{
+        width: 150px;
+        transition: all .15s ease;
+    }
+    .navbar-nav{
+        flex-direction: initial;
+        .nav-link, .nav-item{
+            text-transform: uppercase;
+            color: $gris-oscuro;
+            padding-right: .5rem;
+            padding-left: .5rem;
+        }
+    }
+
+    .dropdown-item{
+        text-transform: capitalize;
+    }
+
+    .nav-responsive{
+        button{
+            position: absolute;
+            top: 10px;
+            left: 4%;
+            i{
+                color: #F8F8F8;
+            }
+        }
+        img{
+            width: 182px;
+        }
+    }
+
+    @include medium{
+        background-color: transparent;
+        border-bottom: 1px solid $fuente-sideNav;
+        box-shadow: none;
+    }
+}
+
+.nav-responsive-scroll{
+    @include medium{
+        background-color: rgba(33, 33, 33, 0.9);
+        border-bottom: 1px solid transparent !important;
+        i{
+            color: #ffff;
+        }
+    }
+}
