@@ -1,0 +1,73 @@
+@import '../../../../styles.scss';
+
+.footer{
+    background-color: #354746;
+    font-size: 0.9em;
+    color: $gris-claro;
+
+    a,i{
+        color: inherit;
+    }
+    
+    .navegacion{
+        border-bottom: 1px solid $gris-claro;
+        a{
+            display: block;
+            &:hover{
+                color: $verde-brillante;;
+            }
+        }
+        h3{
+            font-size: 0.89rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            &::after{
+                display: block;
+                width: 100%;
+                content: '';
+                border-bottom: 1.2px solid $verde-brillante;
+            }   
+        }
+        .medios-de-pago{
+            img{
+                width: 16.666666%;
+                margin-right: 5px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+            }
+        }
+    }
+
+
+    .copyright{
+        padding: 1.2rem;
+        padding-bottom: 2.4rem !important;
+        i{
+            font-size: 1.25rem;
+            color: #ffff;
+            position: relative;
+            transition: top .15s ease;
+            margin-right: 8px;
+            &:hover{
+                top: -2px;
+            }
+        }
+        img{
+            width: 9rem;
+        }
+        p{
+            font-size: 0.9em;
+            font-weight: 700;
+            span{
+                font-size: 0.95em;
+                font-weight: initial;
+            }
+            a{
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

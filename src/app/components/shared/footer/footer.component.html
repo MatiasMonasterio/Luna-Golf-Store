@@ -1,1 +1,82 @@
-<p>footer works!</p>
+<footer class="footer">
+    <div class="container">
+        <div class="navegacion row mx-0 py-4">
+
+            <div class="col-6 col-md-3 mb-5 my-md-0">
+                <h3>Navegacion</h3>
+                <div class="nav-footer">
+                    <a [routerLink]="[ 'inicio' ]">Inicio</a>
+                    <a [routerLink]="[ 'nosotros' ]">Quienes somos</a>
+                    <a [routerLink]="[ 'productos' ]">Productos</a>
+                    <a [routerLink]="[ 'contacto' ]">Contacto</a>
+                </div><!-- NAV FOOTER -->
+            </div><!-- PRIMERA COLUMNA -->
+
+            <div class="col-6 col-md-3 mb-5 my-md-0">
+                <h3>Categorias</h3>
+                <div class="nav-footer">
+                    <a [routerLink]="'productos/palos'">Palos y sets</a>
+                    <a [routerLink]="'productos/pelotas'">Pelotas</a>
+                    <a [routerLink]="'productos/bolsos'">Bolsos</a>
+                    <a [routerLink]="'productos/carros'">Carros eléctricos</a>
+                    <a [routerLink]="'productos/ropa-accesorios'">Ropa y accesorios</a>
+                </div>
+            </div><!-- SEGUNDA COLUMNA -->
+
+            <div class="col-6 col-md-3 mb-5 my-md-0">
+                <h3>Medios de pago</h3>
+                <div class="medios-de-pago">
+                    <section class="col-11 col-md-12 p-0">
+                        <img src="../../../../assets/img/Medios de pago/amex@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/argencard@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/cabal@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/cencosud@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/diners@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/mastercard@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/mercadopago@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/nativa@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/pagofacil@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/rapipago@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/tarjeta-naranja@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/tarjeta-shopping@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/todopago@2x.png" alt="" class="img-fluid">
+                        <img src="../../../../assets/img/Medios de pago/visa@2x.png" alt="" class="img-fluid">
+                    </section>
+                </div> <!-- MEDIOS DE PAGO -->
+            </div><!-- TERCERA COLUMNA -->
+
+            <div class="contact-column col-6 col-md-3 mb-5 my-md-0">
+                <h3>Contactanos</h3>
+                <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/QVdnqdkopD4eLFWH6"><i class="fas fa-map-marker-alt"></i> Driving Moreno</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/BrCQuCQa8FSzBibp7"><i class="fas fa-map-marker-alt"></i> Country San Diego</a>
+                <a href="tel:+541138257637"><i class="fas fa-phone"></i> (011) 15-38257637</a>
+            </div><!-- CUARTA COLUMNA -->
+
+        </div><!-- NAVEGACION -->
+
+        <div class="copyright row">
+
+            <div class="col-12 col-md-4 p-0 d-flex align-items-center">
+                <div class="icon-container p-0 text-center text-md-left w-100">
+                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                </div>
+            </div><!-- PRIMERA COLUMNA -->
+
+            <div class="col-12 col-md-4 text-center text-uppercase data">
+                <p class="mt-2">© Luna Golf Store 2019<br>
+                    <span>Diseñador web: <a>Monasterio Matías</a></span>
+                </p>
+            </div><!-- SEGUNDA COLUMNA -->
+
+            <div class="col-12 col-md-4 p-0 d-flex align-items-center">
+                <div class="p-0 img-container text-center text-md-right w-100">
+                    <a [routerLink]="['inicio']"><img src="../../../../assets/img/logo responsive white.png" alt="logo" class="img-fluid"></a>
+                </div><!-- IMG CONTAINER -->
+            </div><!-- TERCERA COLUMNA -->
+
+        </div><!-- COPYRIGHT -->
+
+    </div> <!-- CONTAINER -->
+</footer>
