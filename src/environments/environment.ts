@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyC_dAg8KUChY3SModfTBWfEMdDrel5T0aQ',
+    authDomain: 'luna-golf-store.firebaseapp.com',
+    databaseURL: 'https://luna-golf-store.firebaseio.com',
+    projectId: 'luna-golf-store',
+    storageBucket: 'luna-golf-store.appspot.com',
+    messagingSenderId: '192448794054'
+  }
 };
 
 /*
