@@ -1,0 +1,41 @@
+$gris-oscuro: #4B4B4B;
+$negro: #212121;
+$gris-claro: #F8F8F8;
+$verde-oscuro: #455C5A;
+$verde-brillante: #16BF3D;
+
+$fuente-principal: $gris-oscuro;
+$fuente-sideNav: $gris-claro;
+$background-sidenav: $negro;
+
+// FOOTER
+$backgroud-footer: $verde-oscuro;
+
+body{
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    color: $fuente-principal;
+    background-color: $gris-claro;
+}
+
+@mixin x-big{
+    @media only screen and (max-width: 1200px){
+        @content;
+    }
+};
+@mixin big{
+    @media only screen and (max-width: 992px) {
+        @content;
+    }
+};
+@mixin medium{
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+};
+
+@mixin small{
+    @media only screen and (max-width: 575px) {
+        @content;
+    }
+};
