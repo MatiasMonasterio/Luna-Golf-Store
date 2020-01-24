@@ -1,0 +1,264 @@
+@import '../../../styles.scss';
+
+.home-header{
+    @include headers('../../../assets/img/wallpaper.jpg', 100%, 0.7, top);
+
+    min-height: 200px;
+
+    .intro-texto{
+        color: $blanco;
+        text-shadow: 0 0 5px $gris-oscuro;
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    p{
+        color: $blanco;
+    }
+    a{
+        color: $blanco;
+        text-shadow: 0 0 5px $gris-oscuro;
+        font-size: 1.4rem;
+        padding: 5px 60px;
+        border: 2.5px solid $blanco;
+        border-radius: 50px;
+        margin: auto 15px;
+        box-shadow: 0 0 5px $gris-oscuro;
+
+        &:hover{
+            background-color: $verde-claro;
+            border: 2.5px solid $verde-claro;
+            text-shadow: initial;
+        }
+    }
+
+    @include small{
+        background-color: transparent;
+        .intro-texto{
+            font-size: 1.8rem;
+            margin-bottom: 0 !important;
+            text-shadow: 0 0 8px $gris-oscuro;
+        }
+        p{
+            font-size: 1em;
+            margin-bottom: 30px !important;
+            text-shadow: 0 0 8px $gris-oscuro;
+        }
+        a{
+            font-size: 1rem;
+            border: 2px solid $blanco;
+            margin: auto 8px;
+            padding: 5px 50px;
+            text-shadow: 0 0 8px $gris-oscuro;
+        }
+    }
+}
+
+section{
+    margin: 200px auto;
+}
+
+.home-container{
+    .title{
+        color: black;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    .us{
+        .btn-us{
+            color: $blanco;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0);
+            background-color: $verde-claro;
+            font-size: 0.7em;
+            &:hover{
+                background-color: rgb(48, 156, 128);
+            }
+        }
+    }
+
+    .categorias{
+        color: $gris-claro;
+        background-color: $verde-oscuro;
+        padding-top: 90px;
+        padding-bottom: 90px;
+
+        .title{
+            color: $gris-claro;
+            text-shadow: 2px 2px 8px rgb(59, 59, 59);
+            &::after{
+                content: '';
+                display: block;
+                width: 70%;
+                margin: auto auto;
+                margin-top: 10px;
+                border-bottom: 2.2px solid $verde-brillante;
+    
+                @include small{
+                    width: 95%;
+                }
+            }
+        }
+        
+        .carro-icono{
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                display: block;
+                background-image: url('../../../assets/img/icono-carro.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 40%;
+                height: 40%;
+                filter: invert(100%);
+                    -webkit-filter: invert(100%);
+            }
+        }
+        .bolso-icono{
+            @extend .carro-icono;
+            &::before{
+                background-image: url('../../../assets/img/icono-bolso.png');
+            }
+        }
+        .palo-icono{
+            @extend .carro-icono;
+            &::before{
+                background-image: url('../../../assets/img/icono-palo2.png');
+            }
+        }
+        i{
+            position: relative;
+            top: 0;
+            cursor: pointer;
+            color: #ffff;
+            border: 2.5px solid $gris-claro;
+            border-radius: 80px;
+            width: 8.4rem;
+            height: 8.4rem;
+            font-size: 3rem;
+            margin: 0;
+            transition: all .15s ease;
+            box-shadow: 0 0 20px rgb(59, 59, 59);
+            margin-bottom: 15px;
+            
+            &:hover{
+                top: -4px;
+                background-color: $verde-claro;
+
+                @include small{
+                    top: 0;
+                    background-color: inherit;
+                }
+            }
+
+            @include small{
+                width: 13rem;
+                height: 13rem;
+                border-radius: 100px;
+            }
+        }
+
+        .scroller{
+            @include small{
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: pre;
+            }
+        
+            .contenedor{
+                @include small{
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                }
+            }
+
+            .col{
+                margin-left: 18px;
+                margin-right: 18px;
+            }
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .brands{
+        .container{
+            width: 70%;
+        }
+        .carousel-control-next-icon{
+            background-image: none !important;
+            color: $gris-oscuro;
+            &::after{
+                content: "\f054";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+            }
+        }
+        .carousel-control-prev-icon{
+            @extend .carousel-control-next-icon;
+            &::after{
+                content: "\f053";
+            }
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next{
+            &:hover{
+                .carousel-control-next-icon{
+                    color: $verde-brillante !important;
+                }
+            }
+        }
+    }
+
+    .visit{
+        .map-name{
+            height: 7rem;
+            background-color: $verde-claro;
+            color: $gris-claro;
+            font-size: 0.8em;
+
+            @include small{
+                height: 13.3rem
+            }
+
+            i{
+                font-size: 2em;
+            }
+            span{
+                font-weight: 700;
+            }
+        }
+        .map-button{
+            background-color: transparent;
+            border: none;
+            color: $verde-brillante;
+            text-decoration: underline;
+            font-size: 0.9em;
+            padding-left: 0;
+        }
+        .map{
+            iframe{
+                width: 100%;
+                height: 13rem;
+            }
+
+            @include small{
+                iframe{
+                    height: 0;
+                    transition: height .3s ease;
+                    -moz-transition: height .3s ease;
+                }
+
+                .show{
+                    height: 13rem;
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,139 @@
-<p>home works!</p>
+<div class="home-header">
+    <div class="intro col-md-6 col-12 mx-auto d-flex align-items-center justify-content-center h-100">
+        <div class="intro-container">
+            <p class="intro-texto text-md-center text-left mb-0 text-center">Luna golf store</p>
+            <p class="text-center mb-5">lorem ipsum dolor sit amet, consecteur adipiscing elit. Integer et erat eget nisl vehicula convallis nec ut sem.</p>
+
+            <div class="d-flex justify-content-center">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/">Instagram</a> 
+                <a target="_blank" rel="noopener noreferrer" href="https://www.Facebook.com/lunagolfstore/">Facebook</a>
+            </div><!--  D FLEX -->
+
+        </div><!-- INTRO -->
+    </div>
+</div><!-- HOME HEADER -->
+
+<div class="home-container">
+
+    <section class="us container text-center">
+        <h2 class="title">Somos</h2>
+        <p class="col-12 col-md-10 col-lg-7 mx-auto mx-2 p-0">
+            It is a long established fact that a reader will be distracted by the readable 
+            content of a page when looking at its layout. The point
+        </p>
+        <a [routerLink]="'/nosotros'" class="btn btn-us mt-4">Conoce más de nosotros</a>
+    </section><!-- US CONTAINER -->
+
+    <section class="categorias container-fluid">
+        <div class="container">
+            <h2 class="title text-center mb-5">Nuestras categorias</h2>
+
+            <div class="scroller">
+                <div class="contenedor row text-center text-uppercase">
+                    <div class="col">
+                        <a [routerLink]="'/productos/palos'"><i class="d-flex mx-auto justify-content-center align-items-center fas palo-icono"></i></a>
+                        <p class="mx-auto">Palos y sets</p>
+                    </div><!-- PRIMERA COLUMNA -->
+
+                    <div class="col">
+                        <i [routerLink]="'/productos/pelotas'" class="d-flex mx-auto justify-content-center align-items-center fas fa-golf-ball"></i>
+                        <p class="mx-auto">Pelotas</p>
+                    </div><!-- SEGUNDA COLUMNA -->
+
+                    <div class="col">
+                        <i [routerLink]="'/productos/bolsos'" class="d-flex mx-auto justify-content-center align-items-center fas bolso-icono"></i>
+                        <p class="mx-auto">Bolsos</p>
+                    </div><!-- TERCERA COLUMNA -->
+
+                    <div class="col">
+                        <i [routerLink]="'/productos/carros'" class="d-flex mx-auto justify-content-center align-items-center fas carro-icono"></i>
+                        <p class="mx-auto">Carros</p>
+                    </div><!-- CUARTA COLUMNA -->
+
+                    <div class="col">
+                        <i [routerLink]="'/productos/ropa-accesorios'" class="d-flex mx-auto justify-content-center align-items-center fas fa-tshirt"></i>
+                        <p class="mx-auto">Ropa y accesorios</p>
+                    </div><!-- QUINTA COLUMNA -->
+
+                    <div class="w-100"></div><!-- CORTAR COLUMNA -->
+                </div><!-- CONTENEDOR -->
+            </div><!--SCROLLER-->
+        </div><!-- CONTAINER -->
+    </section><!-- CATEGORIA CONTAINER -->
+
+    <section class="brands">
+        <h2 class="title text-center">Trabajamos con</h2>
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div id="carousel-container" class="container">
+                </div><!-- CAROUSEL CONTAINER -->
+              
+            </div><!-- CAROUSEL INNER -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div><!-- CAROUSEL -->
+
+    </section><!-- BRANDS -->
+
+    <section class="visit">
+        <h2 class="title text-center">Visitanos</h2>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 pr-md-1">
+                    <div class="map-name d-flex align-items-center">
+                        <div class="row w-100 mx-0 justify-content-center">
+                            <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                                <i class="fas fa-golf-ball"></i>
+                            </div><!-- ICONO -->
+                            
+                            <div class="col-12 col-md-6 text-center text-md-left">
+                                <span>Driving Moreno</span><br>
+                                Acceso Oeste KM. 38,5 <br>
+                                <button  type="button" class="map-button" [routerLink]="'/contacto'">Ver horarios</button>
+                                <button type="button" class="map-button d-inline-block d-md-none" (click)="showMap(1)">Ver mapa</button>
+                            </div><!-- NOMBRE -->
+                        </div><!-- ROW -->
+                    </div><!-- MAP NAME -->
+
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13132.154058417675!2d-58.81474632340448!3d-34.62846698671816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1fea5c3f445e79e7!2sDriving%20Moreno!5e0!3m2!1ses!2sar!4v1577398824140!5m2!1ses!2sar" frameborder="0"
+                        style="border:0" allowfullscreen [ngClass]="{'show': map1}"></iframe>
+                    </div><!-- MAP -->
+                </div><!-- PRIMER MAPA -->
+
+                <div class="col-12 col-md-6 pl-md-1">
+                    <div class="map-name d-flex align-items-center">
+                        <div class="row w-100 mx-0 justify-content-center">
+                            <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+                                <i class="fas fa-home"></i>
+                            </div><!-- ICONO -->
+
+                            <div class="col-12 col-md-6 text-center text-md-left">
+                                <span>Country San Diego</span><br>
+                                RP25 KM. 7,5 <br>
+                                <button  type="button" class="map-button" [routerLink]="'/contacto'">Ver horarios</button>
+                                <button type="button" class="map-button d-inline-block d-md-none" (click)="showMap(2)">Ver mapa</button>
+                            </div>
+                        </div><!-- ROW -->
+                    </div><!-- MAP NAME -->
+
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11048.471741813057!2d-58.84547881269017!3d-34.5856901644544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9437abeabf2b%3A0xd3205ac9847354cf!2sClub%20de%20Campo%20San%20Diego!5e0!3m2!1ses!2sar!4v1577404268165!5m2!1ses!2sar" frameborder="0"
+                        style="border:0" allowfullscreen [ngClass]="{'show': map2}"></iframe>
+                    </div><!-- MAP -->
+                </div><!-- SEGUNDO MAPA -->
+
+            </div><!-- ROW -->
+        </div><!-- CONTAINER -->
+    </section><!-- VISIT -->
+
+</div><!-- HOME CONTAINER -->
