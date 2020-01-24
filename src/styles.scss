@@ -1,8 +1,10 @@
 $gris-oscuro: #4B4B4B;
 $negro: #212121;
 $gris-claro: #F8F8F8;
+$blanco: #ffff;
 $verde-oscuro: #455C5A;
 $verde-brillante: #16BF3D;
+$verde-claro: #2B806A;
 
 $fuente-principal: $gris-oscuro;
 $fuente-sideNav: $gris-claro;
@@ -11,11 +13,13 @@ $background-sidenav: $negro;
 // FOOTER
 $backgroud-footer: $verde-oscuro;
 
-body{
+body, html{
     font-family: 'Lora', serif;
     font-size: 15px;
     color: $fuente-principal;
-    background-color: $gris-claro;
+    background-color: $blanco;
+    width: 100%;
+    height: 100%;
 }
 
 @mixin x-big{
@@ -39,3 +43,29 @@ body{
         @content;
     }
 };
+
+@mixin headers( $image, $height: 50%, $opacity: 0.6, $position: center){
+    position: relative;
+    height: $height;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url($image);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: $position;
+        filter: brightness($opacity);
+        -webkit-filter: brightness($opacity);
+    }
+};
+
+// CLASE PARA HOME COMPONENTS
+.marca{
+    height: 120px;
+    width: auto;
+}
