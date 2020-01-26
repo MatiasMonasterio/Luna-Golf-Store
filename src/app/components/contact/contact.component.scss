@@ -1,0 +1,67 @@
+@import '../../../styles.scss';
+
+.contact-header{
+    @include headers('../../../assets/img/contacto.jpg', 50%, 0.6, center 25%); 
+    h2{
+        position: relative;
+        z-index: 50;
+    }
+}
+
+.contact-container{
+    margin: 100px auto;
+    .ubicacion-info{
+        border-right: 1px solid #e0e0e0;
+        @include medium{
+            border: none;
+        }
+
+        span{
+            font-weight: 700;
+        }
+    }
+
+    .second-box{
+        a{
+            color: inherit;
+        }
+    }
+
+    .redes{
+        @include medium{
+            border-left: 1px solid #e0e0e0;
+        }
+    }
+}
+
+.map{
+    margin: 100px auto;
+    .map-info{
+        height: 10em;
+        background-color: $blanco;
+        color: $gris-oscuro;
+        cursor: pointer;
+        border-radius: 4px;
+        position: relative;
+        top: 0px;
+        box-shadow: 0 0 8px rgb(209, 209, 209);
+        transition: top .1s ease;
+        -webkit-transition: top .1s ease;
+    }
+
+    .map-selected{
+        top: 10px;
+        background-color: $verde-claro;
+        color: $gris-claro;
+        
+        @include medium{
+            top: 0;
+        }
+    }
+    span{
+        font-weight: 700;
+    }
+    i{
+        font-size: 2.5em;
+    }
+}
