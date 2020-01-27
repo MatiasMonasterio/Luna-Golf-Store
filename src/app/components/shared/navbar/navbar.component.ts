@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
 
     this.checkPath();
     document.addEventListener('click',(e)=>{
-      if(e.target.tagName === 'A') this.checkPath();
+      if((<HTMLElement>e.target).tagName === 'A') this.checkPath();
     })
   }
 
