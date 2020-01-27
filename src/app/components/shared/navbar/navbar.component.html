@@ -30,7 +30,7 @@
 </div> <!-- SIDE-NAV -->
 
 
-<nav class="navbar navbar-expand-lg" [ngClass]="{'nav-responsive-scroll': scrollResponsive }">
+<nav class="navbar navbar-expand-lg" [ngClass]="{'nav-responsive-scroll': scrollResponsive, 'nav-responsive-product': product && !scrollResponsive }">
 
     <div class="nav-responsive d-flex d-md-none justify-content-center w-100">
         <button class="navbar-toggler" type="button" (click)="showSideNav()">

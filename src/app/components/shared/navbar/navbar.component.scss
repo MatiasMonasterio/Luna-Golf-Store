@@ -115,7 +115,17 @@
         background-color: rgba(33, 33, 33, 0.9);
         border-bottom: 1px solid transparent !important;
         i{
-            color: #ffff;
+            color: #ffff !important;
         }
+    }
+}
+
+.nav-responsive-product{
+    i{
+        color: $gris-oscuro !important;
+    }
+    img{
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
     }
 }

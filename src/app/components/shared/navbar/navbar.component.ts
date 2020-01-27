@@ -10,6 +10,8 @@ export class NavbarComponent implements OnInit {
   show: boolean = false;
   dropdownMenu: boolean = false;
   scrollResponsive: boolean;
+  path: string;
+  product: boolean;
 
   logo: HTMLElement;
 
@@ -18,6 +20,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.logo = document.querySelector('#logo');
     this.scrollNav();
+
+    this.checkPath();
+    document.addEventListener('click',(e)=>{
+      if(e.target.tagName === 'A') this.checkPath();
+    })
   }
 
   // MUESTRA/ OCULTA EL SIDE NAV
@@ -44,6 +51,13 @@ export class NavbarComponent implements OnInit {
         self.logo.style.width = '150px';
       }
     } 
+  }
+
+  // CAMBIAR DISEÑO NAV SI ESTA EN EL PATH PRODUCTOS RESPONSIVE
+  checkPath(){
+    this.path = window.location.pathname;
+    if( this.path.includes('/productos') ) this.product = true;
+    else this.product = false;
   }
 
 }
