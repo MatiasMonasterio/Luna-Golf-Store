@@ -1,1 +1,32 @@
-<p>products works!</p>
+<div class="product-header d-flex align-items-end">
+    <div class="container text-right">
+        <h2>Productos</h2>
+    </div>
+</div>
+
+<nav class="product-nav nav navbar-expand-md" [ngClass]="{'product-nav-open': navResponsiveOpen}">
+    <div class="d-flex justify-content-center w-100 d-block d-md-none product-selected">
+        <p class="my-1">{{categoriaSeleccionada}}</p>
+        <button id="btn-nav" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="showNav()">
+            <i class="fas fa-caret-down" [ngClass]="{'up': flagNavStyle}"></i>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="container d-block d-md-flex justify-content-between text-center mt-3 mt-md-0" id="navbarSupportedContent">
+            <a [routerLink]="'palos'" class="nav-item nav-link" routerLinkActive="active-product" (click)="closeNav()">Palos</a>
+            <a [routerLink]="'pelotas'" class="nav-item nav-link" routerLinkActive="active-product" (click)="closeNav()">Pelotas</a>
+            <a [routerLink]="'bolsos'" class="nav-item nav-link" routerLinkActive="active-product" (click)="closeNav()">Bolsos</a>
+            <a [routerLink]="'carros'" class="nav-item nav-link" routerLinkActive="active-product" (click)="closeNav()">Carros</a>
+            <a [routerLink]="'ropa-accesorios'" class="nav-item nav-link" routerLinkActive="active-product" (click)="closeNav()">Ropa y accesorios</a>
+        </div>
+    </div>
+
+</nav>
+
+<div class="product-container container">
+    <div class="alert alert-dark py-4 text-center" role="alert" *ngIf="alert">
+        Seleccione una categoria!
+    </div>
+    <router-outlet></router-outlet>
+</div>
