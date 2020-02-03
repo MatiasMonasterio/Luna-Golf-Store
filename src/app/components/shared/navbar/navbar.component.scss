@@ -121,11 +121,13 @@
 }
 
 .nav-responsive-product{
-    i{
-        color: $gris-oscuro !important;
-    }
-    img{
-        filter: invert(100%);
-        -webkit-filter: invert(100%);
+    @include medium{
+        i{
+            color: $gris-oscuro !important;
+        }
+        img{
+            filter: invert(100%);
+            -webkit-filter: invert(100%);
+        }
     }
 }
