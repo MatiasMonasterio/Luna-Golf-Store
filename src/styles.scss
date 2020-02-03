@@ -69,3 +69,13 @@ body, html{
     height: 120px;
     width: auto;
 }
+
+.btn-sec{
+    color: $blanco;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0);
+    background-color: $verde-claro;
+    font-size: 0.7em;
+    &:hover{
+        background-color: rgb(48, 156, 128);
+    }
+}
