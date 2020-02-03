@@ -9,6 +9,7 @@ import { PelotasComponent } from './pelotas/pelotas.component';
 import { BolsosComponent } from './bolsos/bolsos.component';
 import { CarrosComponent } from './carros/carros.component';
 import { AccesoriosComponent } from './accesorios/accesorios.component';
+import { ProductsViewComponent } from './shared/products-view/products-view.component';
 
 
 
@@ -19,7 +20,8 @@ import { AccesoriosComponent } from './accesorios/accesorios.component';
     PelotasComponent,
     BolsosComponent,
     CarrosComponent,
-    AccesoriosComponent
+    AccesoriosComponent,
+    ProductsViewComponent
   ],
   imports: [
     CommonModule,
