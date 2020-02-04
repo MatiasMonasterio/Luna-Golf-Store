@@ -20,7 +20,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 // Modulos
-import { ProductsModule } from './components/products/products.module'
+import { ProductsModule } from './components/products/products.module';
 
 @NgModule({
   declarations: [
