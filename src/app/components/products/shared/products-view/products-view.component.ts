@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../../products.service';
 import { Producto } from '../../../../interface/producto';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-view',
@@ -19,7 +20,7 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
   load: boolean = true;
   btnDisabled: boolean;
 
-  constructor( private _ps: ProductsService ){
+  constructor( private _ps: ProductsService, private router: Router ){
     this.indentificarPath();
     this.primeraVez();
   }
@@ -82,6 +83,10 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
       default:
         break;
     }
+  }
+
+  productTab(id: string){
+    this.router.navigate(['/producto', id]);
   }
 
 }

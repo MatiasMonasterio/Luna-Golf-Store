@@ -12,11 +12,27 @@ export class ProductsService {
   productos: Array<Producto> = [];
   indicador: number;
   limit: boolean = false;
+  private producto: Producto;
 
   constructor( private afs: AngularFirestore ){
   }
 
   // OBTENER UN SOLO PRODUCTO POR SU ID
+  getProduct(id: string){
+
+    return this.afs.collection( 'productos' ).valueChanges()
+      .pipe(
+        map( (resp: Array<Producto>) =>{
+          resp.forEach((element: Producto) =>{
+            if( element.id === id ) {
+              this.producto = element;
+              return;
+            }
+          })
+          return this.producto;
+        })
+      )
+  }
 
   // OBTENER TODOS LOS PRODUCTOS POR CATEGORÍA
   getProductos(categoria: string, destroy: boolean = false): Observable<any>{

@@ -11,6 +11,13 @@ import { CarrosComponent } from './carros/carros.component';
 import { AccesoriosComponent } from './accesorios/accesorios.component';
 import { ProductsViewComponent } from './shared/products-view/products-view.component';
 
+import { ProductComponent } from './shared/product/product.component';
+
+// PIPES
+import { NombrePipe } from '../../pipes/nombre.pipe';
+import { DetallesPipe } from '../../pipes/detalles.pipe';
+import { PrecioPipe } from '../../pipes/precio.pipe';
+
 
 
 @NgModule({
@@ -21,7 +28,11 @@ import { ProductsViewComponent } from './shared/products-view/products-view.comp
     BolsosComponent,
     CarrosComponent,
     AccesoriosComponent,
-    ProductsViewComponent
+    ProductsViewComponent,
+    ProductComponent,
+    NombrePipe,
+    DetallesPipe,
+    PrecioPipe
   ],
   imports: [
     CommonModule,

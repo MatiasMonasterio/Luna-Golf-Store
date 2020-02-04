@@ -8,6 +8,8 @@ import { BolsosComponent } from './bolsos/bolsos.component';
 import { CarrosComponent } from './carros/carros.component';
 import { AccesoriosComponent } from './accesorios/accesorios.component';
 
+import { ProductComponent } from './shared/product/product.component'
+
 const routes: Routes = [
     { path: '', component: ProductsComponent, children:[
         { path: 'palos', component: PalosComponent },
@@ -15,7 +17,8 @@ const routes: Routes = [
         { path: 'bolsos', component: BolsosComponent },
         { path: 'carros', component: CarrosComponent },
         { path: 'ropa-accesorios', component: AccesoriosComponent }
-    ]}
+    ]},
+    { path: 'producto/:id', component: ProductComponent }
 ];
 
 @NgModule({

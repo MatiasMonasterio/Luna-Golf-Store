@@ -5,7 +5,7 @@
 <!-- <p *ngFor="let producto of productos">{{producto.nombre}}</p> -->
 <div class="row">
     <div class="col-6 col-md-3 mb-5" *ngFor="let producto of productos">
-        <div class="card">
+        <div class="card" (click)="productTab(producto.id)">
             <div class="square-container">
               <div class="img-container d-flex justify-content-center align-items-center">
                 <img [src]=producto.imgUrl class="card-img-top" [alt]=producto.nombre>
