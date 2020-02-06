@@ -1,33 +1,36 @@
-<div class="side-nav d-block d-md-none" [ngClass]="{'show': show}">
-    <div class="close-btn-container">
-        <button class="close-btn" type="button" (click)="showSideNav()"><i class="fas fa-times"></i></button>
-    </div> <!-- CLOSE BTN CONTAINER -->
+<div class="sidenav-container d-block d-md-none" [ngClass]="{'bg-show': show}">
+    <div class="side-nav" [ngClass]="{'show': show}">
+        <div class="close-btn-container">
+            <button class="close-btn" type="button" (click)="showSideNav()"><i class="fas fa-times-circle"></i></button>
+        </div> <!-- CLOSE BTN CONTAINER -->
+    
+        <div class="container mt-4">
+            <div class="nav-menu text-uppercase">
+                <a (click)="showSideNav()" [routerLink]="'inicio'" routerLinkActive="active" class="nav-item nav-link" >Inicio</a>
+                <a (click)="showSideNav()" [routerLink]="'nosotros'" routerLinkActive="active" class="nav-item nav-link" >Quienes somos</a>
+                <a class="nav-link nav-item dropdown dropdown-toggle" id="navbarDropdownDokstop" routerLinkActive="active" (click)="showDropdownMenu()">
+                    Productos
+                </a>
+                <div class="dropdown-menu2" aria-labelledby="navbarDropdownDokstop" [ngClass]="{'dropdown-menu-show': dropdownMenu}">
+                    <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/palos'">Palos</a>
+                    <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/pelotas'">Pelotas</a>
+                    <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/bolsos'">Bolsos</a>
+                    <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/carros'">Carros</a>
+                    <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/ropa-accesorios'">Ropa y accesorios</a>
+                </div> <!-- DROPDOWN-MENU2 -->
+                <a (click)="showSideNav()" [routerLink]="'contacto'" routerLinkActive="active" class="nav-item nav-link" >Contacto</a>
+            </div> <!-- NAV-MENU -->
+    
+            <div class="nav-footer">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lunagolfstore/"><i class="fab fa-facebook-square"></i></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541138257637"><i class="fab fa-whatsapp"></i></a>
+            </div> <!-- NAV-FOOTER -->
+    
+        </div> <!-- CONTAINER -->
+    </div> <!-- SIDE-NAV -->
+</div>  <!-- SIDENAV CONTAINER -->
 
-    <div class="container">
-        <div class="nav-menu text-uppercase">
-            <a (click)="showSideNav()" [routerLink]="'inicio'" routerLinkActive="active" class="nav-item nav-link" >Inicio</a>
-            <a (click)="showSideNav()" [routerLink]="'nosotros'" routerLinkActive="active" class="nav-item nav-link" >Quienes somos</a>
-            <a class="nav-link nav-item dropdown dropdown-toggle" id="navbarDropdown" role="button" (click)="showDropdownMenu()">
-                Productos
-            </a>
-            <div class="dropdown-menu2" aria-labelledby="navbarDropdown" [ngClass]="{'dropdown-menu-show': dropdownMenu}">
-                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/palos'">Palos</a>
-                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/pelotas'">Pelotas</a>
-                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/bolsos'">Bolsos</a>
-                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/carros'">Carros</a>
-                <a class="dropdown-item" (click)="showSideNav(); showDropdownMenu()" [routerLink]="'productos/ropa-accesorios'">Ropa y accesorios</a>
-            </div> <!-- DROPDOWN-MENU2 -->
-            <a (click)="showSideNav()" [routerLink]="'contacto'" routerLinkActive="active" class="nav-item nav-link" >Contacto</a>
-        </div> <!-- NAV-MENU -->
-
-        <div class="nav-footer">
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-            <a href=""><i class="fab fa-whatsapp"></i></a>
-        </div> <!-- NAV-FOOTER -->
-
-    </div> <!-- CONTAINER -->
-</div> <!-- SIDE-NAV -->
 
 
 <nav class="navbar navbar-expand-lg" [ngClass]="{'nav-responsive-scroll': scrollResponsive, 'nav-responsive-product': product && !scrollResponsive }">
@@ -45,13 +48,13 @@
         <div class="navbar-nav">
             <a [routerLink]="'inicio'" class="nav-item nav-link" routerLinkActive="active">Inicio</a>
             <a [routerLink]="'nosotros'" class="nav-item nav-link" routerLinkActive="active">Quienes Somos</a>
-            <div class="nav-item dropdown">
-                <a [routerLink]="'productos'" class="nav-link dropdown-toggle" routerLinkActive="active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="'productos/palos'">Palos</a>
+            <div class="nav-item dropdown" (mouseover)="showDropdown(true)" (mouseout)="showDropdown(false)" (click)="showDropdown(false)">
+                <a [routerLink]="'productos'" class="nav-link dropdown-toggle" routerLinkActive="active" >Productos<i class="pl-1 fas fa-caret-down"></i></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{'show': showDropdownDokstop}">
+                    <a class="dropdown-item" [routerLink]="'productos/palos'">Palos y sets</a>
                     <a class="dropdown-item" [routerLink]="'productos/pelotas'">Pelotas</a>
                     <a class="dropdown-item" [routerLink]="'productos/bolsos'">Bolsos</a>
-                    <a class="dropdown-item" [routerLink]="'productos/carros'">Carros</a>
+                    <a class="dropdown-item" [routerLink]="'productos/carros'">Carros eléctricos</a>
                     <a class="dropdown-item" [routerLink]="'productos/ropa-accesorios'">Ropa y accesorios</a>
                 </div>
             </div> <!-- DROPDOWN -->

@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   scrollResponsive: boolean;
   path: string;
   product: boolean;
+  showDropdownDokstop: boolean;
 
   logo: HTMLElement;
 
@@ -58,6 +59,12 @@ export class NavbarComponent implements OnInit {
     this.path = window.location.pathname;
     if( this.path.includes('/productos') ) this.product = true;
     else this.product = false;
+  }
+
+  // MUESTRA/ OCULTA EL DROP DOWN EN NAV DOKSTOP
+  showDropdown(show: boolean){
+    if( show ) this.showDropdownDokstop = true;
+    else this.showDropdownDokstop = false;
   }
 
 }
