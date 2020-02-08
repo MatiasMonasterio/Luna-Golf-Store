@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, DoCheck {
 
   show: boolean = false;
   dropdownMenu: boolean = false;
@@ -13,25 +13,34 @@ export class NavbarComponent implements OnInit {
   path: string;
   product: boolean;
   showDropdownDokstop: boolean;
+  body: HTMLElement;
 
   logo: HTMLElement;
 
-  constructor() { }
+  constructor(){
+  }
 
   ngOnInit() {
     this.logo = document.querySelector('#logo');
     this.scrollNav();
-
     this.checkPath();
-    document.addEventListener('click',(e)=>{
-      if((<HTMLElement>e.target).tagName === 'A') this.checkPath();
-    })
+    this.closeSidenavBg();
+
+    this.body = document.body;
+
+  }
+
+  ngDoCheck(){
+    if( this.path !== window.location.pathname ) this.checkPath();
   }
 
   // MUESTRA/ OCULTA EL SIDE NAV
   showSideNav(){
     this.show = !this.show;
     this.dropdownMenu = false;
+
+    if(this.show) this.body.style.overflowY = 'hidden'
+    else this.body.style.overflowY = 'scroll'
   }
 
   // MUESTRA/ OCULTA EL DROPDOWN MENU
@@ -57,7 +66,7 @@ export class NavbarComponent implements OnInit {
   // CAMBIAR DISEÑO NAV SI ESTA EN EL PATH PRODUCTOS RESPONSIVE
   checkPath(){
     this.path = window.location.pathname;
-    if( this.path.includes('/productos') ) this.product = true;
+    if( this.path.includes( '/productos/' )) this.product = true;
     else this.product = false;
   }
 
@@ -65,6 +74,15 @@ export class NavbarComponent implements OnInit {
   showDropdown(show: boolean){
     if( show ) this.showDropdownDokstop = true;
     else this.showDropdownDokstop = false;
+
+    console.log('entro')
+  }
+
+  // CERRAR EL SIDENAV CUANDO SE HAGA CLICK FUERA DEL SIDENAV
+  closeSidenavBg(){
+    document.addEventListener('click',(e)=>{
+      if((<HTMLElement>e.target).id === 'bg-sidenav') this.showSideNav();
+    })
   }
 
 }
