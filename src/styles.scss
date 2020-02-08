@@ -22,6 +22,7 @@ body, html{
     height: 100%;
 }
 
+
 @mixin x-big{
     @media only screen and (max-width: 1200px){
         @content;
@@ -44,6 +45,12 @@ body, html{
     }
 };
 
+@mixin to-big{
+    @media only screen and (min-width: 768px){
+        @content
+    }
+}
+
 @mixin headers( $image, $height: 50%, $opacity: 0.6, $position: center){
     position: relative;
     height: $height;
@@ -63,6 +70,12 @@ body, html{
         -webkit-filter: brightness($opacity);
     }
 };
+
+body{
+    @include to-big{
+        overflow-y: scroll !important;
+    }
+}
 
 // CLASE PARA HOME COMPONENTS
 .marca{
