@@ -5,8 +5,8 @@
 </div>
 
 <nav class="product-nav nav navbar-expand-md" [ngClass]="{'product-nav-open': navResponsiveOpen}">
-    <div class="d-flex justify-content-center w-100 d-block d-md-none product-selected">
-        <p class="my-1">{{categoriaSeleccionada}}</p>
+    <div class="d-flex justify-content-center w-100 d-block d-md-none product-selected" >
+        <p class="py-2 mb-0 d-block w-100 text-center" (click)="closeNav()">{{categoriaSeleccionada}}</p>
         <button id="btn-nav" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="showNav()">
             <i class="fas fa-caret-down" [ngClass]="{'up': flagNavStyle}"></i>
         </button>
