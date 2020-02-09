@@ -1,0 +1,14 @@
+<div class="card" (click)="productTab(producto.id)">
+
+    <div class="square-container">
+      <div class="img-container d-flex justify-content-center align-items-center">
+        <img [src]=producto.imgUrl class="card-img-top open-product" [alt]=producto.nombre>
+      </div> <!-- IMG CONTAINER -->
+    </div>  <!-- CONTENEDOR CUADRADO -->
+
+    <div class="card-body">
+      <h5 class="card-title open-product">{{producto.nombre}}</h5>
+      <p class="card-text precio">$ {{producto.precio | precio }}</p>
+    </div> <!-- CARD BODY -->
+
+</div> <!-- CARD -->
