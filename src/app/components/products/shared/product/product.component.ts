@@ -19,6 +19,8 @@ export class ProductComponent implements OnInit {
     categoria: ''
   };
 
+  relacionados: Array<Producto> = [];
+
   constructor( private ar: ActivatedRoute, private _ps: ProductsService ){
     this.getParameter();
   }
@@ -36,7 +38,16 @@ export class ProductComponent implements OnInit {
     this._ps.getProduct(id)
       .subscribe(resp=>{
         this.producto = resp;
+        this.createProductosRelacionados();
       })
+  }
+
+  createProductosRelacionados(){
+    for( let i = 0 ; i < 4 ; i++ ){
+      this.relacionados.push(this.producto);
+    }
+
+    console.log(this.relacionados);
   }
 
 }

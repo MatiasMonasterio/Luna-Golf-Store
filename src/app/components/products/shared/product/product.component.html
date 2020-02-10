@@ -1,25 +1,29 @@
-<div class="product-name-header d-flex align-item-center justify-content-center">
+<header class="product-name-header d-flex align-item-center justify-content-center">
     <h2 class="my-3">{{producto.nombre | nombre: true}}</h2>
-</div>
+</header>  <!-- PRODUCT NAME HEADER -->
 
 <div class="info d-none d-md-block">
     <div class="container">
         <div class="row text-center my-3">
+
             <div class="col-4 px-lg-5 px-0 d-flex justify-content-center">
                 <i class="fas fa-shopping-cart"></i>
                 <p>Ventas solo en locales</p>
-            </div>
+            </div>  <!-- PRIMERA COLUMNA -->
+
             <div class="col-4 px-lg-5 px-0 d-flex justify-content-center">
                 <i class="fas fa-comments"></i>
                 <p>Consulta stock</p>
-            </div>
+            </div>  <!-- SEGUNDA COLUMNA -->
+
             <div class="col-4 px-lg-5 px-0 d-flex justify-content-center">
                 <i class="fas fa-credit-card"></i>
                 <p>Cuotas sin interes</p>
-            </div>
-        </div>
-    </div>
-</div>
+            </div>  <!-- TERCERA COLUMNA -->
+
+        </div>  <!-- ROW -->
+    </div> <!-- CONTAINER -->
+</div>  <!-- INFO -->
 
 <!--Carousel Wrapper-->
 <div id="carousel-example-1z" class="carousel slide d-block d-md-none" data-ride="carousel">
@@ -27,26 +31,32 @@
   <div class="carousel-inner pt-3" role="listbox">
     <!--First slide-->
     <div class="carousel-item active">
+
         <div class="d-flex justify-content-center py-1">
             <i class="fas fa-shopping-cart"></i>
             <p>Ventas solo en locales</p>
-        </div>
+        </div>  <!-- PRIMERA COLUMNA -->
+
     </div>
     <!--/First slide-->
     <!--Second slide-->
     <div class="carousel-item mx-auto">
+
         <div class="d-flex justify-content-center py-1">
             <i class="fas fa-comments"></i>
             <p>Consulta stock</p>
-        </div>
+        </div>  <!-- SEGUNDA COLUMNA -->
+
     </div>
     <!--/Second slide-->
     <!--Third slide-->
     <div class="carousel-item">
+
         <div class="d-flex justify-content-center py-1">
             <i class="fas fa-credit-card"></i>
             <p>Cuotas sin interes</p>
-        </div>
+        </div>  <!-- TERCER COLUMNA -->
+
     </div>
     <!--/Third slide-->
   </div>
@@ -63,86 +73,41 @@
 </div>
 <!--/.Carousel Wrapper-->
 
-<div class="producto my-3">
+<div class="producto mb-5 mt-3">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <img [src]="producto.imgUrl" [alt]="producto.nombre" class="img-fluid">
-            </div>
+
+            <div class="col-12 col-md-6 image-container d-flex align-items-center">
+                <img [src]="producto.imgUrl" [alt]="producto.nombre" class="mx-auto img-fluid">
+            </div>  <!-- COLUMNA 1 PARA IMAGEN -->
 
             <div class="col-12 col-md-6 my-auto text-md-left text-center">
                 <h3>{{producto.nombre | nombre: false}}</h3>
                 <p class="precio">$ {{producto.precio | precio}}</p>
-
                 <p [innerHtml]="producto.detalles | detalles"></p>
+                <button class="btn btn-sec text-uppercase">Ver medios de pago</button>
+            </div>  <!-- COLUMNA 2 PARA INFORMACION -->
 
-                <button class="btn text-uppercase">Ver medios de pago</button>
-            </div>
-        </div>
-    </div>
-</div>
+        </div><!-- ROW -->
+    </div><!-- CONTAINER -->
+</div>  <!-- PRODUCTO -->
 
 <div class="relacionados my-5">
+
     <div class="container mb-3 text-center text-md-left">
         <h2>Productos relacionados</h2>
-    </div>
+    </div>  <!-- TITULO CONTENEDOR -->
 
     <div class="productos-card">
         <div class="container">
             <div class="row">
-                <div class="col-7 col-md-3">
-                    <div class="card" (click)="productTab(producto.id)">
-                        <div class="square-container">
-                          <div class="img-container d-flex justify-content-center align-items-center">
-                            <img [src]=producto.imgUrl class="card-img-top" [alt]=producto.nombre>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">{{producto.nombre}}</h5>
-                          <p class="card-text precio">$ {{producto.precio}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-7 col-md-3">
-                    <div class="card" (click)="productTab(producto.id)">
-                        <div class="square-container">
-                          <div class="img-container d-flex justify-content-center align-items-center">
-                            <img [src]=producto.imgUrl class="card-img-top" [alt]=producto.nombre>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">{{producto.nombre}}</h5>
-                          <p class="card-text precio">$ {{producto.precio}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-7 col-md-3">
-                    <div class="card" (click)="productTab(producto.id)">
-                        <div class="square-container">
-                          <div class="img-container d-flex justify-content-center align-items-center">
-                            <img [src]=producto.imgUrl class="card-img-top" [alt]=producto.nombre>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">{{producto.nombre}}</h5>
-                          <p class="card-text precio">$ {{producto.precio}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-7 col-md-3">
-                    <div class="card" (click)="productTab(producto.id)">
-                        <div class="square-container">
-                          <div class="img-container d-flex justify-content-center align-items-center">
-                            <img [src]=producto.imgUrl class="card-img-top" [alt]=producto.nombre>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">{{producto.nombre}}</h5>
-                          <p class="card-text precio">$ {{producto.precio}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+                <div class="col-7 col-md-3" *ngFor="let producto of relacionados">
+                    <app-card [producto]="producto"></app-card>
+                </div>  <!-- COLUMNAS DE CADA CARD -->
+
+            </div>  <!-- ROW -->
+        </div>  <!-- CONTAINER -->
+    </div>  <!-- CONTENEDOR DE CARD -->
+
+</div><!-- RELACIONADOS -->

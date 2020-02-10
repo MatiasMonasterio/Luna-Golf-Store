@@ -17,11 +17,11 @@
 }
 
 .info{
-    font-size: 1.2em;
+    font-size: 1em;
     border-bottom: 1px solid #dee2e6;
 
     i{
-        font-size: 1.5em;
+        font-size: 1.5rem;
         margin: auto auto;
     }
     p{
@@ -30,11 +30,14 @@
 }
 
 .carousel{
+    background-color: $gris-claro;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     .carousel-indicators{
         position: initial;
         margin: 0;
         li{
+            width: .45rem;
+            height: .45rem;
             background-color: $gris-oscuro;
             border: none;
             margin-top: 6px;
@@ -43,13 +46,13 @@
     }
     p{
         display: inline-block;
-        font-size: 1.2em;
+        font-size: .9.2em;
         margin: 0;
     }
     i{
-        font-size: 1.7em;
-        margin-left: 15px;
-        margin-right: 15px;
+        font-size: 1.5rem;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -62,13 +65,35 @@
         color: #64CF3E;
         font-weight: 700;
         font-size: 1.45em;
+        margin-top: 0 !important;
     }
+    .image-container{
+        width: 100%;
+        &::after{
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+    @include medium{
+        p{
+            margin-top: 25px;
+            font-size: .95em;
+        }
+    }
+
 }
 
 .relacionados{
+
+    @include medium{
+        margin-top: 4.5rem !important;
+        margin-bottom: 4.5rem !important;
+    }
     h2{
         font-weight: 700;
     }
+    position: relative;
 
     .productos-card{
         position: relative;
@@ -80,14 +105,14 @@
             top: 0;
             left: 0;
             position: absolute;
-            z-index: -5;
+            z-index: 0;
             width: 100%;
             height: 100%;
             background-image: url(https://d26lpennugtm8s.cloudfront.net/stores/232/825/products/epic1-9a249ca1895797baa915132875201388-1024-1024.jpg);
             background-repeat: no-repeat;
             background-position-x: center;
             background-position-y: 35%;
-            background-size: 135%;
+            background-size: 150%;
             -moz-filter: blur(10px);
             -webkit-filter: blur(10px);
             filter: blur(10px);
@@ -97,6 +122,9 @@
             @include medium{
                 overflow-x: scroll;
                 overflow-y: hidden;
+            }
+            ::-webkit-scrollbar {
+                display: none;
             }
             .row{
                 @include medium{
