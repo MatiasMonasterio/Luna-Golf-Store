@@ -1,24 +1,18 @@
-<div class="spinner-border text-light mx-auto d-block my-5" role="status" *ngIf="load" style="width: 6em; height: 6em;">
-    <span class="sr-only">Cargando...</span>
-</div>
+<div class="d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-light mx-auto d-block my-5" role="status" *ngIf="load" style="width: 6.5em; height: 6.5em;">
+        <span class="sr-only">Cargando...</span>
+    </div> <!-- SPINNER BORDER -->
+</div>  <!-- D FLEX CONTENEDOR -->
 
-<!-- <p *ngFor="let producto of productos">{{producto.nombre}}</p> -->
-<div class="row">
-    <div class="col-6 col-md-3 mb-5" *ngFor="let producto of productos">
-        <div class="card" (click)="productTab(producto.id)">
-            <div class="square-container">
-              <div class="img-container d-flex justify-content-center align-items-center">
-                <img [src]=producto.imgUrl class="card-img-top" [alt]=producto.nombre>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{producto.nombre}}</h5>
-              <p class="card-text precio">$ {{producto.precio}}</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="d-flex justify-content-center">
+<div class="row contenedor">
+    <div class="columna col-6 col-md-3 p-0" *ngFor="let producto of productos">
+
+      <app-card [producto]="producto"></app-card>
+
+    </div> <!-- COLUMNAS CARD -->
+</div> <!-- ROW -->
+
+<div class="d-flex justify-content-center mt-2">
     <button class="text-uppercase btn btn-sec px-5" (click)="obtenerData()" *ngIf="!limitProduct && !load" [disabled]="btnDisabled">Mostrar más productos</button>
-</div>
+</div> <!-- BOTON DE CARGAR -->

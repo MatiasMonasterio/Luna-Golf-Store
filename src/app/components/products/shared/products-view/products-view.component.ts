@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../../products.service';
 import { Producto } from '../../../../interface/producto';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-products-view',
@@ -19,22 +19,31 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
   productosSubscription: Subscription;
   load: boolean = true;
   btnDisabled: boolean;
+  keepData: boolean = false;
+  RouterEventSubscription: Subscription;
 
   constructor( private _ps: ProductsService, private router: Router ){
-    this.indentificarPath();
-    this.primeraVez();
+
+    this.routeEvent();
   }
 
-  ngOnInit() {
+  ngOnInit(){
   }
 
   ngOnDestroy(){
-    if(!window.location.pathname.includes('producto/')){
-      this._ps.getProductos(this.categoria, true);
+
+    if(!this.keepData) this._ps.getProductos(this.categoria, true);
+
+    if( this.productosSubscription !== undefined){
       this.productosSubscription.unsubscribe();
+    }
+
+    if( this.RouterEventSubscription !== undefined ){
+      this.RouterEventSubscription.unsubscribe();
     }
   }
 
+  // TRAE LISTA DE PRODUCTOS SEGUN LA CATEGORIA QUE ESTE SELECCIONADA
   obtenerData(){
     this.productosSubscription = this._ps.getProductos( this.categoria )
       .subscribe(
@@ -53,16 +62,18 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
         })
   }
 
+  // DETERMINA SI HAY QUE TRAER LA INFO DEL SERVICIO O REALIZAR UNA PETICION AJAX
   primeraVez(){
     if(this._ps.productos.length === 0) this.obtenerData();
     else {
       this.productos = this._ps.productos;
       this.index = this.productos.length;
+      this.load = false;
     }
   }
 
+  // INTENTIFICA QUE CATEGORIA ESTAMOS UBICADOS
   indentificarPath(){
-    this.path = window.location.pathname;
 
     switch(this.path){
       case '/productos/palos':
@@ -83,10 +94,23 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
       default:
         break;
     }
+    this.primeraVez();
   }
 
-  productTab(id: string){
-    this.router.navigate(['/producto', id]);
+  // IDENTIFICA EL PATH ACTUAL Y AL QUE SE VA A CAMBIAR
+  routeEvent(){
+    this.RouterEventSubscription = this.router.events.subscribe( e => {
+
+      if( e instanceof NavigationStart){
+        if(e.url.includes('/producto/')) this.keepData = true;
+      }
+
+      if( e instanceof NavigationEnd ){
+        this.path = e.url;
+        this.indentificarPath()
+      }
+
+    })
   }
 
 }
