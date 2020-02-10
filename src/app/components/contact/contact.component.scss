@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .contact-header{
-    @include headers('../../../assets/img/contacto.jpg', 50%, 0.6, center 25%); 
+    @include headers('../../../assets/img/contacto.jpg', '../../../assets/img/contacto-movil.jpg',  50%, 0.6, center 25%); 
     h2{
         position: relative;
         z-index: 50;

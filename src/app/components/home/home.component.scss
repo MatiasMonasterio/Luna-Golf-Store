@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .home-header{
-    @include headers('../../../assets/img/wallpaper.jpg', 100%, 0.7, top);
+    @include headers('../../../assets/img/wallpaper.jpg', '../../../assets/img/wallpaper-movil.jpg', 100%, 0.7, top);
 
     min-height: 200px;
 

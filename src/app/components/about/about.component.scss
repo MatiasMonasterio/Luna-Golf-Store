@@ -1,0 +1,35 @@
+@import '../../../styles.scss';
+
+.about-header{
+    @include headers('../../../assets/img/nosotros.jpg', '../../../assets/img/nosotros-movil.jpg', 50%);
+    h2{
+        position: relative;
+        z-index: 50;
+    }
+}
+
+.about-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .container{
+        max-width: 70%;
+        @include medium {
+            max-width: 90%;
+        }
+    }
+
+    .us{
+        .resaltar{
+            font-weight: 700;
+            font-size: 1.1em;
+            color: $verde-oscuro;
+            padding: 6px;
+        }
+    }
+
+    .productos{
+        height: 300px;
+        background-color: $verde-claro;
+        color: $gris-claro;
+    }
+}
