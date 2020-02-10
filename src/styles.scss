@@ -49,9 +49,9 @@ body, html{
     @media only screen and (min-width: 768px){
         @content
     }
-}
+};
 
-@mixin headers( $image, $height: 50%, $opacity: 0.6, $position: center){
+@mixin headers( $image, $image-movil, $height: 50%, $opacity: 0.6, $position: center){
     position: relative;
     height: $height;
 
@@ -69,6 +69,12 @@ body, html{
         filter: brightness($opacity);
         -webkit-filter: brightness($opacity);
     }
+
+    @include medium{
+        &::before{
+            background-image: url($image-movil);
+        }
+    }
 };
 
 body{
@@ -85,10 +91,15 @@ body{
 
 .btn-sec{
     color: $blanco;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 2px 10px 0 rgba(0,0,0,0.1);
     background-color: $verde-claro;
     font-size: 0.7em;
-    &:hover{
-        background-color: rgb(48, 156, 128);
+    border-radius: 20px;
+
+    @include to-big(){
+        &:hover{
+            background-color: rgb(48, 156, 128);
+        }
     }
+
 }
