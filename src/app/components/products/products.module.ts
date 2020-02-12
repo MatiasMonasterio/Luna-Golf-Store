@@ -21,6 +21,8 @@ import { CardComponent } from './shared/card/card.component';
 import { NombrePipe } from '../../pipes/nombre.pipe';
 import { DetallesPipe } from '../../pipes/detalles.pipe';
 import { PrecioPipe } from '../../pipes/precio.pipe';
+import { ModalComponent } from './shared/modal/modal.component';
+import { CuotasPipe } from '../../pipes/cuotas.pipe';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { PrecioPipe } from '../../pipes/precio.pipe';
     NombrePipe,
     DetallesPipe,
     PrecioPipe,
-    CardComponent
+    CardComponent,
+    ModalComponent,
+    CuotasPipe
   ],
   imports: [
     CommonModule,
