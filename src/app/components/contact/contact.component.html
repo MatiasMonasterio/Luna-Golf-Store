@@ -4,7 +4,7 @@
 
 <div class="contact-container">
     <section class="info container">
-        <div class="row">
+        <div class="row mx-auto">
             <div class="col-12 col-md-6 ubicacion-info">
                 <h3 class="text-center text-md-left">Ubicación</h3>
                 <p>
@@ -18,13 +18,13 @@
                 </p>
             </div>  <!-- UBICACION LOCALES -->
 
-            <div class="second-box col-12 col-md-6 row mt-4 mt-md-0">
-                <div class="col-6 col-md-12 text-center text-md-left">
+            <div class="second-box col-12 col-md-6 row mt-4 mt-md-0 mx-auto px-0">
+                <div class="col-6 col-md-12 text-center text-md-left px-2 px-md-3">
                     <h3>Whatsapp</h3>
                     <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541138257637">(011) 15-38257637</a>
                 </div><!-- PRIMERA FILA -->
                     
-                <div class="col-6 col-md-12 redes text-center text-md-left">
+                <div class="col-6 col-md-12 redes text-center text-md-left px-2 px-md-3">
                     <h3>Redes sociales</h3>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lunagolfstore/" class="d-block"><i class="fab fa-instagram"></i> /lunagolstore</a>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/" class="d-block"><i class="fab fa-facebook-square"></i> /lucagolfstore</a>
@@ -35,13 +35,13 @@
 
         <div class="map">
             <div class="row mx-0">
-                <div class="col-12 col-md-6 d-flex justify-content-center map-info" (click)="selectMap(1)" [ngClass]="{'map-selected': mapSelected}">
-                    <div class="row col-10">
-                        <div class="col-2 d-flex align-items-center">
-                            <i class="fas fa-golf-ball"></i>
+                <div class="col-12 col-md-6 d-flex justify-content-center map-info" (click)="selectMap(true)" [ngClass]="{'map-selected': mapSelected}">
+                    <div class="row col-12 col-sm-10">
+                        <div class="col-4 d-flex align-items-center">
+                            <i class="fas fa-golf-ball mx-auto"></i>
                         </div>  <!-- ICONO -->
 
-                        <div class="col-8 d-flex align-items-center">
+                        <div class="col-8 d-flex align-items-center p-0 px-sm-2">
                             <p class="m-0">
                                 <span>Driving Moreno</span><br>
                                 Lunes a Viernes y Feriados <br>
@@ -51,13 +51,13 @@
                     </div> <!-- SECOND ROW -->
                 </div>  <!-- MAP INFO 1 -->
 
-                <div class="col-12 col-md-6 d-flex justify-content-center map-info" (click)="selectMap(1)" [ngClass]="{'map-selected': !mapSelected}">
-                    <div class="row col-10">
-                        <div class="col-2 d-flex align-items-center">
-                            <i class="fas fa-home"></i>
+                <div class="col-12 col-md-6 d-flex justify-content-center map-info" (click)="selectMap(false)" [ngClass]="{'map-selected': !mapSelected}">
+                    <div class="row col-12 col-sm-10">
+                        <div class="col-4 d-flex align-items-center">
+                            <i class="fas fa-home mx-auto"></i>
                         </div>  <!-- ICONO -->
 
-                        <div class="col-8 d-flex align-items-center">
+                        <div class="col-8 d-flex align-items-center p-0 p-sm-2">
                             <p class="m-0">
                                 <span>Country San Diego</span><br>
                                 Lunes a Viernes <br>

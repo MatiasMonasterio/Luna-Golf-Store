@@ -21,8 +21,8 @@ export class ContactComponent implements OnInit {
     this.map = document.querySelector('#map')
   }
 
-  selectMap(){
-    this.mapSelected = !this.mapSelected
+  selectMap(map: boolean){
+    this.mapSelected = map;
     if( this.mapSelected ){
       this.map.setAttribute('src', this.drivingUrl);
     }

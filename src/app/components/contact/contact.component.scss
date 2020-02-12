@@ -21,6 +21,13 @@
         }
     }
 
+    h3{
+        font-size: 1.6em;
+        @include medium{
+            font-size: 1.3em;
+        }
+    }
+
     .second-box{
         a{
             color: inherit;
