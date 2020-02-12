@@ -78,14 +78,121 @@
         <div class="row">
 
             <div class="col-12 col-md-6 image-container d-flex align-items-center">
-                <img [src]="producto.imgUrl" [alt]="producto.nombre" class="mx-auto img-fluid">
+                <img [src]="producto.imgUrl" [alt]="producto.nombre" class="mx-auto img-fluid w-100">
             </div>  <!-- COLUMNA 1 PARA IMAGEN -->
 
             <div class="col-12 col-md-6 my-auto text-md-left text-center">
                 <h3>{{producto.nombre | nombre: false}}</h3>
                 <p class="precio">$ {{producto.precio | precio}}</p>
                 <p [innerHtml]="producto.detalles | detalles"></p>
-                <button class="btn btn-sec text-uppercase">Ver medios de pago</button>
+                <button class="btn btn-sec text-uppercase" type="button" data-toggle="modal" data-target="#mediosPagoModal">Ver medios de pago</button>
+
+                <div class="modal fade"  id="mediosPagoModal" tabindex="-1" role="dialog" aria-labelledby="mediosPagoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog .modal-dialog-scrollable d-flex align-item-center" role="document">
+                        <div class="modal-content">
+
+                            <header class="modal-header">
+                                <h4 class="modal-title" id="mediosPagoModalLabel">Medios de pago</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </header>  <!-- MODAL HEADER -->
+
+                            <div class="modal-body">
+
+                                <div class="tarjeta-credito">
+                                    <h5 class="text-uppercase"><span>Tarjeta de credito</span></h5>
+                                    <div class="container">
+
+                                        <div class="mt-4 border p-2">
+                                            <p>6 cuotas sin interés de $ {{producto.precio}} <br>
+                                            CFT: <span>0,00%</span> Total: <span>$ {{producto.precio}}</span> En 1 pago: <span>$ {{producto.precio}}</span></p>
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/hsbc-access@2x.png" alt="HSBC ACCES NOW">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-chaco@2x.png" alt="Nuevo Banco del Chaco">
+                                        </div>
+
+                                        <div class="mt-4 border p-2">
+                                            <p>3 cuotas sin interés de $ {{producto.precio}} <br>
+                                            CFT: <span>0,00%</span> Total: <span>$ {{producto.precio}}</span> En 1 pago: <span>$ {{producto.precio}}</span></p>
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/fueguina@2x.png" alt="Tarjeta Fueguina">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-coinag@2x.png" alt="Banco Coinag">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/rebanking@2x.png" alt="Rebanking">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-patagonia-mp@2x.png" alt="Banco Patagonia Mercado Pago">
+                                        </div>
+
+                                        <div class="mt-4 border p-2">
+                                            <p>12 cuotas con otras tarjetas<br>
+                                            O en 1 pago: <span>$ {{producto.precio}}</span></p>
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-ciudad@2x.png" alt="Banco Ciudad">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-municipal@2x.png" alt="Banco Municipal">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/cabaldebit@2x.png" alt="Cabal">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/tarjeta-shopping@2x.png" alt="Tarjeta Shopping">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/provencred@2x.png" alt="Provencred">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-comafi@2x.png" alt="Banco Comafi">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-hipotecario@2x.png" alt="Banco Hipotecario">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-industrial@2x.png" alt="Banco Industrial">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-nacion@2x.png" alt="Banco Nacion">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-patagonia@2x.png" alt="Banco Patagonia">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/HSBC@2x.png" alt="HSBC">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/ICBC@2x.png" alt="ICBC">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/galicia@2x.png" alt="Galicia">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-santa-cruz@2x.png" alt="Banco Santa Cruz">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/itau@2x.png" alt="Itaú">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-entre-rios@2x.png" alt="Banco Entre Rios">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-santa-fe@2x.png" alt="Banco santa Fe">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-sanjuan@2x.png" alt="Banco San Juan">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/supervielle@2x.png" alt="Supervielle">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-santander@2x.png" alt="Santander">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-frances@2x.png" alt="Banco Fraces">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-tucuman@2x.png" alt="Banco Tucuman">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-provincia@2x.png" alt="Banco Provincia">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-la-pampa@2x.png" alt="Banco de La Pampa">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/bica@2x.png" alt="Bica">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-columbia@2x.png" alt="Columbia">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/tarjeta-saenz@2x.png" alt="Tarjeta Saenz">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/efectivo-si@2x.png" alt="Efectivo Si">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-comafi@2x.png" alt="Banco Comafi">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/cencosud@2x.png" alt="Cencosud">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/nativa@2x.png" alt="Nativa">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/tarjeta-walmart@2x.png" alt="Tarjeta Walmart">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/carta-automatica@2x.png" alt="Carta Automatica">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-comercio@2x.png" alt="Banco de Comercio">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-coinag@2x.png" alt="Banco Coinag">
+                                        </div>
+
+                                    </div>  <!-- CONTAINER -->
+                                </div>  <!-- TARJETA DE CREDITO -->
+
+                                <div class="tarjeta-debito mt-5">
+                                    <h5 class="text-uppercase"><span>Tarjeta de débito y efectivo</span></h5>
+                                    <div class="container">
+
+                                        <div class="debito mt-4 border p-2">
+                                            <p>Débito <br>
+                                            Precio: <span>$ {{producto.precio}}</span></p>
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/visadebit@2x.png" alt="Visa Débito">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/mastercarddebit@2x.png" alt="Mastercard Débito">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/cabaldebit@2x.png" alt="Cabal Débito">
+                                        </div>
+
+                                        <div class="efectivo mt-4 border p-2">
+                                            <p>Efectivo <br>
+                                            Precio <span>$ {{producto.precio}}</span></p>
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/pagofacil@2x.png" alt="Pago Facil">
+                                            <img src="../../../../../assets/img/Medio de pagos - TODOS/rapipago@2x.png" alt="Rapipago">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>  <!-- MODAL BODY -->
+
+                        </div>  <!-- MODAL CONTENT -->
+                    </div>  <!-- MODAL DIALOG -->
+                </div>  <!-- MODAL -->
+
+                
+
             </div>  <!-- COLUMNA 2 PARA INFORMACION -->
 
         </div><!-- ROW -->
