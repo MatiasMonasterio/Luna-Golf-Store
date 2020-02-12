@@ -105,14 +105,14 @@
                                     <div class="container">
 
                                         <div class="mt-4 border p-2">
-                                            <p>6 cuotas sin interés de $ {{producto.precio}} <br>
+                                            <p>6 cuotas sin interés de $ {{producto.precio | cuotas:6}} <br>
                                             CFT: <span>0,00%</span> Total: <span>$ {{producto.precio}}</span> En 1 pago: <span>$ {{producto.precio}}</span></p>
                                             <img src="../../../../../assets/img/Medio de pagos - TODOS/hsbc-access@2x.png" alt="HSBC ACCES NOW">
                                             <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-chaco@2x.png" alt="Nuevo Banco del Chaco">
                                         </div>
 
                                         <div class="mt-4 border p-2">
-                                            <p>3 cuotas sin interés de $ {{producto.precio}} <br>
+                                            <p>3 cuotas sin interés de $ {{producto.precio | cuotas: 3}} <br>
                                             CFT: <span>0,00%</span> Total: <span>$ {{producto.precio}}</span> En 1 pago: <span>$ {{producto.precio}}</span></p>
                                             <img src="../../../../../assets/img/Medio de pagos - TODOS/fueguina@2x.png" alt="Tarjeta Fueguina">
                                             <img src="../../../../../assets/img/Medio de pagos - TODOS/banco-coinag@2x.png" alt="Banco Coinag">
