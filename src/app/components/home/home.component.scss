@@ -25,11 +25,14 @@
         border-radius: 50px;
         margin: auto 15px;
         box-shadow: 0 0 5px $gris-oscuro;
+        display: inline-block;
 
-        &:hover{
-            background-color: $verde-claro;
-            border: 2.5px solid $verde-claro;
-            text-shadow: initial;
+        @include to-big{
+            &:hover{
+                background-color: $verde-claro;
+                border: 2.5px solid $verde-claro;
+                text-shadow: initial;
+            }
         }
     }
 
@@ -46,10 +49,10 @@
             text-shadow: 0 0 8px $gris-oscuro;
         }
         a{
-            font-size: 1rem;
+            font-size: .9em;
             border: 2px solid $blanco;
             margin: auto 8px;
-            padding: 5px 50px;
+            padding: 3px 40px;
             text-shadow: 0 0 8px $gris-oscuro;
         }
     }
@@ -98,7 +101,7 @@ section{
                 border-bottom: 2.2px solid $verde-brillante;
     
                 @include small{
-                    width: 95%;
+                    width: 78%;
                 }
             }
         }
@@ -164,14 +167,15 @@ section{
         }
 
         .scroller{
-            @include small{
+            padding-top: 20px;
+            @include medium{
                 overflow-x: scroll;
                 overflow-y: hidden;
                 white-space: pre;
             }
         
             .contenedor{
-                @include small{
+                @include medium{
                     flex-wrap: nowrap;
                     flex-direction: row;
                 }
@@ -184,6 +188,16 @@ section{
         }
         ::-webkit-scrollbar {
             display: none;
+        }
+
+        @include medium{
+            padding-left: 0;
+            padding-right: 0;
+
+            .container{
+                width: 100%;
+                padding: 0;
+            }
         }
     }
 
@@ -219,13 +233,13 @@ section{
 
     .visit{
         .map-name{
-            height: 7rem;
+            height: 6rem;
             background-color: $verde-claro;
             color: $gris-claro;
             font-size: 0.8em;
 
-            @include small{
-                height: 13.3rem
+            @include medium{
+                height: 14rem
             }
 
             i{
@@ -244,12 +258,13 @@ section{
             padding-left: 0;
         }
         .map{
+            border: none;
             iframe{
                 width: 100%;
-                height: 13rem;
+                height: 18rem;
             }
 
-            @include small{
+            @include medium{
                 iframe{
                     height: 0;
                     transition: height .3s ease;
@@ -257,9 +272,10 @@ section{
                 }
 
                 .show{
-                    height: 13rem;
+                    height: 18rem;
                 }
             }
+        
         }
     }
 }

@@ -1,11 +1,11 @@
 <div class="home-header">
-    <div class="intro col-md-6 col-12 mx-auto d-flex align-items-center justify-content-center h-100">
+    <div class="intro col-md-8 col-xl-6 col-12 mx-auto d-flex align-items-center justify-content-center h-100">
         <div class="intro-container">
             <p class="intro-texto text-md-center text-left mb-0 text-center">Luna golf store</p>
             <p class="text-center mb-5">lorem ipsum dolor sit amet, consecteur adipiscing elit. Integer et erat eget nisl vehicula convallis nec ut sem.</p>
 
             <div class="d-flex justify-content-center">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/">Instagram</a> 
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/">Instagram</a>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.Facebook.com/lunagolfstore/">Facebook</a>
             </div><!--  D FLEX -->
 
@@ -17,7 +17,7 @@
 
     <section class="us container text-center">
         <h2 class="title">Somos</h2>
-        <p class="col-12 col-md-10 col-lg-7 mx-auto mx-2 p-0">
+        <p class="col-12 col-md-10 col-xl-7 mx-auto mx-2 p-0">
             It is a long established fact that a reader will be distracted by the readable 
             content of a page when looking at its layout. The point
         </p>
@@ -25,10 +25,10 @@
     </section><!-- US CONTAINER -->
 
     <section class="categorias container-fluid">
-        <div class="container">
+        <div class="container my-3">
             <h2 class="title text-center mb-5">Nuestras categorias</h2>
 
-            <div class="scroller">
+            <div class="scroller  px-4 px-md-0">
                 <div class="contenedor row text-center text-uppercase">
                     <div class="col">
                         <a [routerLink]="'/productos/palos'"><i class="d-flex mx-auto justify-content-center align-items-center fas palo-icono"></i></a>
@@ -88,7 +88,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 pr-md-1">
+                <div class="col-12 col-md-6 p-md-0 border border-white">
                     <div class="map-name d-flex align-items-center">
                         <div class="row w-100 mx-0 justify-content-center">
                             <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
@@ -98,7 +98,7 @@
                             <div class="col-12 col-md-6 text-center text-md-left">
                                 <span>Driving Moreno</span><br>
                                 Acceso Oeste KM. 38,5 <br>
-                                <button  type="button" class="map-button" [routerLink]="'/contacto'">Ver horarios</button>
+                                <!--<button  type="button" class="map-button" [routerLink]="'/contacto'">Ver horarios</button>-->
                                 <button type="button" class="map-button d-inline-block d-md-none" (click)="showMap(1)">Ver mapa</button>
                             </div><!-- NOMBRE -->
                         </div><!-- ROW -->
@@ -110,7 +110,7 @@
                     </div><!-- MAP -->
                 </div><!-- PRIMER MAPA -->
 
-                <div class="col-12 col-md-6 pl-md-1">
+                <div class="col-12 col-md-6 p-md-0 border border-white">
                     <div class="map-name d-flex align-items-center">
                         <div class="row w-100 mx-0 justify-content-center">
                             <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
@@ -120,7 +120,7 @@
                             <div class="col-12 col-md-6 text-center text-md-left">
                                 <span>Country San Diego</span><br>
                                 RP25 KM. 7,5 <br>
-                                <button  type="button" class="map-button" [routerLink]="'/contacto'">Ver horarios</button>
+                                <!--<button  type="button" class="map-button" [routerLink]="'/contacto'">Ver horarios</button>-->
                                 <button type="button" class="map-button d-inline-block d-md-none" (click)="showMap(2)">Ver mapa</button>
                             </div>
                         </div><!-- ROW -->

@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       let img = document.createElement('img');
       img.setAttribute( 'src', this.marcas[i].img );
       img.setAttribute('alt', this.marcas[i].nombre );
-      img.setAttribute('class', 'img-fluid marca-img' );
+      img.setAttribute('class', 'img-fluid marca-img mx-auto' );
       contenedor.appendChild(img);
 
       this.carousel.lastChild.firstChild.appendChild(contenedor);
