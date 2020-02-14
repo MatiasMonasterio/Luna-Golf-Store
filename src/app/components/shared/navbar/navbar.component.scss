@@ -24,8 +24,6 @@
         .close-btn{
             background-color: transparent;
             border: none;
-            position: relative;
-            left: 86%;
             margin: 11px;
             i{
                 color: $fuente-sideNav;
@@ -89,10 +87,11 @@
     .nav-footer{
         position: absolute;
         bottom: 20px;
-        right: 20px;
+        padding-right: 8px;
         i{
             font-size: 1.3em;
-            margin-left: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
             color: $fuente-sideNav;
         }
     }
@@ -109,15 +108,17 @@
     position: fixed;
     width: 100%;
     z-index: 80;
-    transition: all .2s ease;
-    box-shadow: none;
+
+    @include medium{
+        box-shadow: none;
+    }
 
     .container{
         display: unset;
     }
     img{
         width: 150px;
-        transition: all .15s ease;
+        transition: width .15s ease;
     }
     .navbar-nav{
         flex-direction: initial;
@@ -126,17 +127,6 @@
             color: $gris-oscuro;
             padding-right: .5rem;
             padding-left: .5rem;
-        }
-        .nav-link{
-            &:after{
-                content: '';
-                top: 22px;
-                display: block;
-                width: 0;
-                height: 2px;
-                background-color: $verde-brillante;
-                transition: width .15s ease;
-            }
         }
     }
 
@@ -154,7 +144,6 @@
     .dropdown-menu{
         padding: 0;
         height: 0;
-        transition: all 2s ease !important;
     }
 
     .show{
@@ -164,7 +153,7 @@
     .dropdown-item{
         text-transform: uppercase;
         font-size: 0.7988em;
-        transition: all .1s ease;
+        transition: background-color .1s ease;
 
         &:hover{
             background-color: rgb(43, 128, 106, 0.1);
@@ -187,9 +176,7 @@
     }
 
     .active{
-        &:after{
-            width: 100% !important;
-        }
+        color: rgb(32, 167, 93) !important;
     }
 
     @include medium{
@@ -200,12 +187,6 @@
 
 .nav-responsive-scroll{
     @include medium{
-        /*
-        background-color: rgba(33, 33, 33, 0.9);
-        border-bottom: 1px solid transparent !important;
-        i{
-            color: #ffff !important;
-        }*/
         background-color: $blanco;
         border-bottom: 1px solid $blanco !important;
         box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);

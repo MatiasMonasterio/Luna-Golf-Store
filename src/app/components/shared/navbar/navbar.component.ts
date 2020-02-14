@@ -74,8 +74,6 @@ export class NavbarComponent implements OnInit, DoCheck {
   showDropdown(show: boolean){
     if( show ) this.showDropdownDokstop = true;
     else this.showDropdownDokstop = false;
-
-    console.log('entro')
   }
 
   // CERRAR EL SIDENAV CUANDO SE HAGA CLICK FUERA DEL SIDENAV

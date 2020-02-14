@@ -1,6 +1,6 @@
 <div id="bg-sidenav" class="sidenav-container d-block d-md-none" [ngClass]="{'bg-show': show}">
     <div class="side-nav" [ngClass]="{'show': show}">
-        <div class="close-btn-container">
+        <div class="close-btn-container d-flex justify-content-end">
             <button class="close-btn" type="button" (click)="showSideNav()"><i class="fas fa-times-circle"></i></button>
         </div> <!-- CLOSE BTN CONTAINER -->
     
@@ -22,13 +22,13 @@
                 <li class="nav-item"><a (click)="showSideNav()" [routerLink]="'contacto'" routerLinkActive="active" class="nav-link" >Contacto</a></li>
             </ul> <!-- NAV-MENU -->
     
-            <div class="nav-footer">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lunagolfstore/"><i class="fab fa-facebook-square"></i></a>
-                <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541138257637"><i class="fab fa-whatsapp"></i></a>
-            </div> <!-- NAV-FOOTER -->
-    
         </div> <!-- CONTAINER -->
+
+        <div class="nav-footer d-flex justify-content-end w-100">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lunagolfstore/"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/lunagolfstore/"><i class="fab fa-facebook-square"></i></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541138257637"><i class="fab fa-whatsapp"></i></a>
+        </div> <!-- NAV-FOOTER -->
     </div> <!-- SIDE-NAV -->
 </div>  <!-- SIDENAV CONTAINER -->
 
