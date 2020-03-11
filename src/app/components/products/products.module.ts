@@ -23,6 +23,9 @@ import { DetallesPipe } from '../../pipes/detalles.pipe';
 import { PrecioPipe } from '../../pipes/precio.pipe';
 import { CuotasPipe } from '../../pipes/cuotas.pipe';
 
+// NG SPINNER
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { CuotasPipe } from '../../pipes/cuotas.pipe';
   ],
   imports: [
     CommonModule,
-    AppRoutingChildModule
+    AppRoutingChildModule,
+    NgxSpinnerModule
   ]
 })
 export class ProductsModule { }

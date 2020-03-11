@@ -4,6 +4,7 @@ import { ProductsService } from '../../products.service';
 import { Producto } from '../../../../interface/producto';
 import { Router, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-product',
@@ -24,12 +25,13 @@ export class ProductComponent implements OnInit, OnDestroy {
   relacionados: Array<Producto> = [];
   routerSubscription: Subscription;
 
-  constructor( private ar: ActivatedRoute, private _ps: ProductsService, private router: Router){
+  constructor( private ar: ActivatedRoute, private _ps: ProductsService, private router: Router, private ngs: NgxSpinnerService){
     this.getParameter();
     this.routerNavigat();
   }
 
   ngOnInit() {
+    this.ngs.show();
   }
 
   ngOnDestroy(){
@@ -49,6 +51,7 @@ export class ProductComponent implements OnInit, OnDestroy {
       .subscribe(resp=>{
         this.producto = resp;
         this.createProductosRelacionados();
+        this.ngs.hide();
       })
   }
 
