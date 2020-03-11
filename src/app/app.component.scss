@@ -1,0 +1,43 @@
+@import '../styles.scss';
+
+/*router-outlet{
+    scroll-behavior: smooth;
+}*/
+
+.container-btn{
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 3rem;
+    right: 5%;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(75, 75, 75, 0.4);
+    background-color: rgb(77, 105, 103);
+    z-index: 1000;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+
+    i{
+        font-size: 1.5rem;
+        position: absolute;
+        color: $gris-claro;
+    }
+
+    @include medium{
+        bottom: .2rem;
+        right: 1.2rem;
+    }
+}
+
+.show{
+    bottom: 5rem;
+    visibility: visible;
+    opacity: 1;
+
+    @include medium{
+        bottom: 1.2rem;
+    }
+}
