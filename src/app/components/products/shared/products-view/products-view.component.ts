@@ -1,15 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ProductsService } from '../../products.service';
 import { Producto } from '../../../../interface/producto';
 import { Subscription } from 'rxjs';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { KeepPositionService } from './keep-position.service';
 
 @Component({
   selector: 'app-products-view',
   templateUrl: './products-view.component.html',
   styleUrls: ['./products-view.component.scss']
 })
-export class ProductsViewComponent implements OnInit, OnDestroy {
+export class ProductsViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   productos: Array<Producto> = [];
   index: number;
@@ -22,7 +23,7 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
   keepData: boolean = false;
   RouterEventSubscription: Subscription;
 
-  constructor( private _ps: ProductsService, private router: Router ){
+  constructor( private _ps: ProductsService, private router: Router, private kp: KeepPositionService ){
 
     this.routeEvent();
   }
@@ -30,9 +31,16 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
   ngOnInit(){
   }
 
+  ngAfterViewInit(){
+    this.checkPosition();
+  }
+
   ngOnDestroy(){
 
-    if(!this.keepData) this._ps.getProductos(this.categoria, true);
+    if(!this.keepData){
+      this.kp.positionRouter = undefined;
+      this._ps.getProductos(this.categoria, true)
+    };
 
     if( this.productosSubscription !== undefined){
       this.productosSubscription.unsubscribe();
@@ -102,7 +110,11 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
     this.RouterEventSubscription = this.router.events.subscribe( e => {
 
       if( e instanceof NavigationStart){
-        if(e.url.includes('/producto/')) this.keepData = true;
+        
+        if(e.url.includes('/producto/')) {
+          this.keepData = true;
+          this.kp.positionRouter = window.scrollY;
+        }
       }
 
       if( e instanceof NavigationEnd ){
@@ -111,6 +123,11 @@ export class ProductsViewComponent implements OnInit, OnDestroy {
       }
 
     })
+  }
+
+  checkPosition(){
+    console.log(this.kp.positionRouter);
+    if( this.kp.positionRouter !== undefined ) window.scrollTo( 0, this.kp.positionRouter );
   }
 
 }
