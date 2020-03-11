@@ -21,7 +21,6 @@ import { CardComponent } from './shared/card/card.component';
 import { NombrePipe } from '../../pipes/nombre.pipe';
 import { DetallesPipe } from '../../pipes/detalles.pipe';
 import { PrecioPipe } from '../../pipes/precio.pipe';
-import { ModalComponent } from './shared/modal/modal.component';
 import { CuotasPipe } from '../../pipes/cuotas.pipe';
 
 
@@ -39,7 +38,6 @@ import { CuotasPipe } from '../../pipes/cuotas.pipe';
     DetallesPipe,
     PrecioPipe,
     CardComponent,
-    ModalComponent,
     CuotasPipe
   ],
   imports: [
