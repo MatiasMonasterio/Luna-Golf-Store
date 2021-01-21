@@ -32,4 +32,33 @@
         background-color: $verde-claro;
         color: $gris-claro;
     }
+
+    .redes{
+        .col-12{
+            background-color: $verde-oscuro;
+            position: relative;
+            padding: 0;
+            border-radius: 20px;
+
+            &::after{
+                content: '';
+                //position: relative;
+                display: block;
+                padding-bottom: 100%;
+            }
+
+            a{
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $blanco;
+                width: 100%;
+                height: 100%;
+                
+                i{
+                    font-size: 100%;
+                }
+            }
+        }
+    }
 }
